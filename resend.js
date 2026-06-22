@@ -5,7 +5,7 @@
 // • On localhost           : uses relative URL  → works via `vercel dev`
 // ──────────────────────────────────────────────────────────────────────────
 
-const SEND_EMAIL_URL = "http://127.0.0.1:5001/gym-register-d6987/asia-south1/sendEmail";
+const SEND_EMAIL_URL = "/api/sendEmail";
 
 /**
  * sendEmailViaResend
