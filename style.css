@@ -10,14 +10,21 @@ body {
   color: #fff;
 }
 
+/* ── Header: CSS Grid layout ───────────────────────────────────────────────
+   Two columns:
+     Column 1 (auto)  → logo, sized to its content
+     Column 2 (1fr)   → nav, fills the remaining space
+   Single row, both items vertically centred.
+   ──────────────────────────────────────────────────────────────────────── */
 header {
-  display: flex;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: auto 1fr;
   align-items: center;
   padding: 20px 40px;
   background: #000;
   position: sticky;
   top: 0;
+  z-index: 100;
 }
 
 .logo {
@@ -26,10 +33,20 @@ header {
   color: #f44336;
 }
 
+/* nav sits in column 2; justify-self: end pushes all links to the right */
+nav {
+  display: grid;
+  grid-auto-flow: column;       /* nav links laid out in a single row */
+  grid-auto-columns: max-content;
+  gap: 20px;
+  justify-self: end;            /* right-align the whole nav block */
+  align-items: center;
+}
+
 nav a {
-  margin-left: 20px;
   text-decoration: none;
   color: white;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
